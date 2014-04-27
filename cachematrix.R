@@ -1,5 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These 2 functions aim to save computing time during matrix 
+##  inversion. The first function takes a matrix and creates 
+##  a special list object containg the matrix
+
+## The second function takes the inverse of the matrix contained
+##  in the list generated from the first function. The first time
+##  it is called, it will compute the inverse and store it in the 
+##  cache. If it is called subsequently on the same matrix,
+##  it will just recall the cached value rather then re-calculating
 
 
 makeCacheMatrix<- function(M = matrix(), ...) {
@@ -16,8 +23,6 @@ makeCacheMatrix<- function(M = matrix(), ...) {
   list(set_matrix = set_matrix, get_matrix = get_matrix, set_inverse = set_inverse, get_inverse = get_inverse)   
 }
 
-
-## Write a short comment describing this function
 
 cacheSolve<- function(M, ...) {
   ##  Computes the inverse of the special "matrix"
